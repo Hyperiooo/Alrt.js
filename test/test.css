@@ -1,3 +1,54 @@
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@600&display=swap');
+
 body {
-    background: black;
+    background: #030a1c;
+}
+
+#logo {
+    left: 50%;
+    transform: translateX(-50%);
+    margin-top: 10px;
+    position: absolute;
+    width: 70px;
+}
+
+#logo img {
+    position: absolute;
+    width: 70px;
+}
+
+#logo img.blur {
+    top:10px;
+    z-index: -100;
+    filter: blur(15px);
+    opacity: 40%;
+}
+
+button {
+    position: absolute;
+    font-size: 16px;
+    padding: 15px 25px;
+    outline: none;
+    border: none;
+    border-radius: 10px;
+    background-image: linear-gradient(to bottom right, #ffc23b, #ff8017);
+    font-family: 'JetBrains Mono', monospace;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    cursor: pointer;
+}
+
+button::after {
+    content: 'Test Alert';
+    width: 100%;
+    height: 100%;
+    position: inherit;
+    background: inherit;
+    top: 0; 
+    left: 0;
+    top:10px;
+    z-index: -100;
+    filter: blur(15px);
+    opacity: 40%;
 }

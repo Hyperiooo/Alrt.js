@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="116.723" height="134.773" viewBox="0 0 116.723 134.773">
+  <defs>
+    <linearGradient id="a" y1="56.158" x2="116.72" y2="56.158" gradientUnits="userSpaceOnUse">
+      <stop offset="0.051" stop-color="#ffc23b"/>
+      <stop offset="0.568" stop-color="#ff9824"/>
+      <stop offset="0.911" stop-color="#ff8017"/>
+    </linearGradient>
+    <linearGradient id="b" x1="38.91" y1="112.313" x2="77.81" y2="112.313" xlink:href="#a"/>
+    <linearGradient id="c" x1="48.391" y1="37.344" x2="87.784" y2="63.736" gradientUnits="userSpaceOnUse">
+      <stop offset="0.026" stop-color="#ff831d"/>
+      <stop offset="1" stop-color="#ff5317"/>
+    </linearGradient>
+    <linearGradient id="d" x1="42.016" y1="-1.59" x2="74.338" y2="23.765" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#fff35c"/>
+      <stop offset="1" stop-color="#ffad1d"/>
+    </linearGradient>
+    <linearGradient id="e" x1="23.52" y1="30.98" x2="73.746" y2="70.101" xlink:href="#a"/>
+    <linearGradient id="f" x1="87.292" y1="59.801" x2="126.693" y2="86.199" xlink:href="#c"/>
+    <linearGradient id="g" x1="80.921" y1="20.872" x2="113.243" y2="46.227" xlink:href="#d"/>
+    <linearGradient id="h" x1="62.678" y1="53.637" x2="107.034" y2="88.186" xlink:href="#a"/>
+    <linearGradient id="i" x1="3.111" y1="20.872" x2="35.432" y2="46.227" xlink:href="#d"/>
+    <linearGradient id="j" x1="-15.382" y1="53.442" x2="34.837" y2="92.558" xlink:href="#a"/>
+    <linearGradient id="k" x1="9.481" y1="59.804" x2="48.874" y2="86.196" xlink:href="#c"/>
+    <linearGradient id="l" x1="42.016" y1="88.258" x2="74.338" y2="113.613" xlink:href="#d"/>
+    <linearGradient id="m" x1="-5010.217" y1="-2741.219" x2="-5051.11" y2="-2737.312" gradientTransform="translate(-93.477 -5607.059) rotate(-120)" gradientUnits="userSpaceOnUse">
+      <stop offset="0.051" stop-color="#ffc23b"/>
+      <stop offset="0.911" stop-color="#ff8017"/>
+    </linearGradient>
+    <linearGradient id="n" x1="-3341.901" y1="161.72" x2="-3343.262" y2="182.098" gradientTransform="translate(1590.395 -2862.859) rotate(-60)" xlink:href="#c"/>
+  </defs>
+  <g>
+    <polygon points="116.72 33.693 116.72 101.083 97.26 112.313 77.81 101.083 77.81 78.623 58.36 89.853 38.9 78.623 38.9 101.083 19.45 112.313 0 101.083 0 33.693 19.45 22.463 38.9 33.683 38.9 11.233 38.91 11.233 58.36 0.003 77.81 11.233 77.81 33.693 97.26 22.463 116.72 33.693" fill="url(#a)"/>
+    <polygon points="77.81 101.083 77.81 123.543 58.36 134.773 38.91 123.543 38.91 101.083 58.36 89.853 77.81 101.083" fill="url(#b)"/>
+  </g>
+  <g>
+    <polygon points="77.813 11.23 77.813 78.62 58.363 89.85 58.363 22.46 77.813 11.23" fill="url(#c)"/>
+    <polygon points="38.907 11.231 58.36 22.462 77.813 11.231 58.36 0 38.907 11.231" fill="url(#d)"/>
+    <polygon points="58.363 22.46 58.363 89.85 38.903 78.62 38.903 11.23 58.363 22.46" fill="url(#e)"/>
+    <polygon points="116.723 33.69 116.723 101.08 97.263 112.31 97.263 44.92 116.723 33.69" fill="url(#f)"/>
+    <polygon points="77.813 33.693 97.265 44.924 116.718 33.693 97.265 22.462 77.813 33.693" fill="url(#g)"/>
+    <polygon points="97.263 44.92 97.263 112.31 77.813 101.08 77.813 33.69 97.263 44.92" fill="url(#h)"/>
+    <polygon points="0.002 33.693 19.455 44.924 38.907 33.693 19.455 22.462 0.002 33.693" fill="url(#i)"/>
+    <polygon points="19.453 44.92 19.453 112.31 0.003 101.08 0.003 33.69 19.453 44.92" fill="url(#j)"/>
+    <polygon points="38.903 33.69 38.903 101.08 19.453 112.31 19.453 44.92 38.903 33.69" fill="url(#k)"/>
+    <polygon points="38.907 101.079 58.36 112.31 77.813 101.079 58.36 89.848 38.907 101.079" fill="url(#l)"/>
+    <polygon points="58.36 134.772 58.36 112.31 38.907 101.079 38.907 123.541 58.36 134.772" fill="url(#m)"/>
+    <polygon points="58.36 134.772 77.813 123.541 77.813 101.079 58.36 112.31 58.36 134.772" fill="url(#n)"/>
+  </g>
+</svg>
