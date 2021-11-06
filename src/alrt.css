@@ -48,7 +48,7 @@
 #alrt-main {
     height: fit-content;
     width: fit-content;
-    position: absolute;
+    position: fixed;
     display: table-cell;
     vertical-align: bottom;
     overflow: hidden;
