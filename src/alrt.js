@@ -4,7 +4,8 @@ class Alrt {
         this.position = opt.position || "bottom-left";
         this.zIndex = opt.zIndex || 2147483647;
         this.parentEl = document.createElement("div");
-        this.parentEl.id = "alrt-main";
+        this.mainName = "alrt-main-" + (randomString(5))
+        this.parentEl.id = this.mainName;
         this.parentEl.classList.add("alrt-" + opt.position);
         document.body.appendChild(this.parentEl);
     }
@@ -18,17 +19,29 @@ class Alrt {
             if (this.previousLog) {
                 if (!this.previousLog.isDestroyed) {
                     this.previousLog.destroyNoTransition()
-                    this.previousLog = new AlrtLog(text, options, true);
+                    this.previousLog = new AlrtLog(text, options, this.mainName, true);
                     return
                 }
             }
         }
-        this.previousLog = new AlrtLog(text, options);
+        this.previousLog = new AlrtLog(text, options, this.mainName);
     }
 }
 
+var randomString = function(l, charset) { // generates string of x length, if charset is passed override
+    var result = '';
+    var characters = charset || 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+    var charactersLength = characters.length;
+    for (var i = 0; i < l; i++) {
+        result += characters.charAt(Math.floor(Math.random() *
+            charactersLength));
+    }
+    return result;
+}
+
 class AlrtLog {
-    constructor(text, opt, noTransition) {
+    constructor(text, opt, mainName, noTransition) {
+        console.log(mainName)
         this.isDestroyed = false;
         if (!opt) {
             this.opt = {
@@ -68,13 +81,13 @@ class AlrtLog {
         self = this;
         if (this.opt.position.startsWith("bottom")) {
             document
-                .getElementById("alrt-main")
+                .getElementById(mainName)
                 .insertBefore(
                     this.node,
-                    document.getElementById("alrt-main").firstChild
+                    document.getElementById(mainName).firstChild
                 );
         } else if (this.opt.position.startsWith("top")) {
-            document.getElementById("alrt-main").appendChild(this.node);
+            document.getElementById(mainName).appendChild(this.node);
         }
 
         /*
