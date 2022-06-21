@@ -1,10 +1,11 @@
 document.getElementById("alert").onclick = () => {
-    alrt.log("asdf", {
-        subtext: "axd",
-        duration: 20000,
-        closeBtn: Math.random() >= 0.5
+    alrt.log(Math.random(), {
+        icon: "hi-undo-line"
     })
 }
 let alrt = new Alrt({
-    position: "bottom-left"
+    position: "top-center",
+    duration: 5000, //default duration
+    theme: "bitshift-confirmation",
+    behavior: "overwrite"
 });

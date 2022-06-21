@@ -10,13 +10,26 @@ class Alrt {
     }
     log(text, opt) {
         var options = opt || {};
+        options.duration = options.duration || this.opt.duration
+        options.theme = this.opt.theme || "alrt-default-light"
         options.position = this.position;
-        new AlrtLog(text, options);
+
+        if (this.opt.behavior == "overwrite") {
+            if (this.previousLog) {
+                if (!this.previousLog.isDestroyed) {
+                    this.previousLog.destroyNoTransition()
+                    this.previousLog = new AlrtLog(text, options, true);
+                    return
+                }
+            }
+        }
+        this.previousLog = new AlrtLog(text, options);
     }
 }
 
 class AlrtLog {
-    constructor(text, opt) {
+    constructor(text, opt, noTransition) {
+        this.isDestroyed = false;
         if (!opt) {
             this.opt = {
                 subtext: false,
@@ -26,7 +39,8 @@ class AlrtLog {
                 duration: 2000,
                 displayProgress: false,
                 buttons: null,
-                position: "bottom-left"
+                position: "bottom-left",
+                icon: null
             };
         } else {
             this.opt = {
@@ -37,14 +51,19 @@ class AlrtLog {
                 duration: opt.duration || 2000,
                 displayProgress: opt.displayProgress || false,
                 buttons: opt.buttons || null,
-                position: opt.position || "bottom-left"
+                position: opt.position || "bottom-left",
+                icon: opt.icon || null
             };
         }
         this.node = document.createElement("div");
         this.title = document.createElement("p");
-        this.title.innerHTML = text;
+        this.title.innerHTML = (opt.icon ? `<i class="${opt.icon}"></i>` : "") + text;
         this.node.appendChild(this.title);
         this.node.classList.add("alrt-wrap");
+        if (noTransition) {
+            this.node.style.animationName = "none"
+        }
+        this.node.setAttribute("data-theme", this.opt.theme)
         this.node.classList.add(this.opt.theme);
         self = this;
         if (this.opt.position.startsWith("bottom")) {
@@ -58,6 +77,7 @@ class AlrtLog {
             document.getElementById("alrt-main").appendChild(this.node);
         }
 
+        /*
         var btnParent = document.createElement("div");
         btnParent.classList.add("alrt-btn-parent");
         this.node.appendChild(btnParent);
@@ -70,7 +90,7 @@ class AlrtLog {
             closeBtn.classList.add("alrt-close-button");
             closeBtn.innerHTML = '<i class="ri-close-line"></i>';
             btnParent.appendChild(closeBtn);
-        }
+        }*/
 
         setTimeout(() => {
             this.destroy();
@@ -78,6 +98,7 @@ class AlrtLog {
     }
 
     destroy(e, self) {
+        this.isDestroyed = true;
         if (this) self = this;
         if (self.opt.position.startsWith("top")) {
             self.node.classList.add("alrt-top-out");
@@ -87,5 +108,10 @@ class AlrtLog {
         setTimeout(() => {
             if (self.node.parentNode) self.node.parentNode.removeChild(self.node);
         }, 400);
+    }
+    destroyNoTransition(e, self) {
+        this.isDestroyed = true;
+        if (this) self = this;
+        if (self.node.parentNode) self.node.parentNode.removeChild(self.node);
     }
 }

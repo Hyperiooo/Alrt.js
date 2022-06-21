@@ -1,47 +1,44 @@
 @import url("https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css");
-
 .alrt-wrap {
     position: relative;
-    font-family: sans-serif;
-    color: black;
-    background: white;
-    width: 175px;
-    max-width: 175px;
-    padding: 0px 20px;
     padding-right: 10px;
-    border-radius: 10px;
     animation-duration: 0.4s;
     pointer-events: all;
-    min-height: 50px;
     display: flex;
     align-items: center;
     justify-content: space-between;
 }
 
 .alrt-wrap p {
-    font-family: sans-serif;
-    color: black;
+    font-family: inherit;
     font-size: 16px;
     flex-grow: 1;
     text-align: left;
-    margin-right: 10px;
+    display: flex;
+    align-items: center
 }
 
-.alrt-top-left .alrt-wrap, .alrt-top-right .alrt-wrap, .alrt-top-center .alrt-wrap {
+.alrt-top-left .alrt-wrap,
+.alrt-top-right .alrt-wrap,
+.alrt-top-center .alrt-wrap {
     animation-name: alrt-anim-top-in;
     margin-top: 10px;
 }
 
-.alrt-bottom-left .alrt-wrap, .alrt-bottom-right .alrt-wrap, .alrt-bottom-center .alrt-wrap {
+.alrt-bottom-left .alrt-wrap,
+.alrt-bottom-right .alrt-wrap,
+.alrt-bottom-center .alrt-wrap {
     animation-name: alrt-anim-bottom-in;
     margin-bottom: 10px;
 }
 
-.alrt-bottom-left, .alrt-top-left {
+.alrt-bottom-left,
+.alrt-top-left {
     margin-left: 10px;
 }
 
-.alrt-bottom-right, .alrt-top-right {
+.alrt-bottom-right,
+.alrt-top-right {
     margin-right: 10px;
 }
 
@@ -151,7 +148,36 @@
     animation-fill-mode: forwards;
 }
 
-.alrt-close-button {
+.alrt-btn-wrap {
+    height: 30px;
+    width: fit-content;
+    position: absolute;
+    top: 10px;
+    margin: 0;
+    padding: 0;
+}
+
+.alrt-wrap[data-theme="alrt-default-light"] {
+    font-family: sans-serif;
+    color: black;
+    background: white;
+    padding: 0px 20px;
+    min-height: 50px;
+    width: 175px;
+    max-width: 175px;
+    border-radius: 10px;
+}
+
+.alrt-wrap[data-theme="alrt-default-light"] p {
+    margin: 15px 0;
+}
+
+.alrt-wrap[data-theme="alrt-default-light"] p i {
+    font-size: 20px;
+    color: #333333;
+}
+
+.alrt-wrap[data-theme="alrt-default-light"] .alrt-close-button {
     height: 30px;
     width: 30px;
     margin: 0;
@@ -168,21 +194,61 @@
     margin-left: 5px;
 }
 
-.alrt-btn-wrap {
-    height: 30px;
-    width: fit-content;
-    position: absolute;
-    top: 10px;
-    margin: 0;
-    padding: 0;
-}
-
-.alrt-wrap:hover .alrt-close-button {
+.alrt-wrap[data-theme="alrt-default-light"]:hover .alrt-close-button {
     color: #e0e0e0;
 }
 
-.alrt-close-button:hover, .alrt-close-button:focus {
+.alrt-wrap[data-theme="alrt-default-light"] .alrt-close-button:hover,
+.alrt-wrap[data-theme="alrt-default-light"] .alrt-close-button:focus {
     background: #e0e0e0;
     color: #a7a7a7 !important;
+    border-radius: 5px;
+}
+
+.alrt-wrap[data-theme="alrt-default-dark"] {
+    font-family: sans-serif;
+    color: white;
+    background: rgb(20, 20, 20);
+    padding: 0px 20px;
+    min-height: 50px;
+    width: 175px;
+    max-width: 175px;
+    border-radius: 10px;
+}
+
+.alrt-wrap[data-theme="alrt-default-dark"] p {
+    margin: 15px 0;
+}
+
+.alrt-wrap[data-theme="alrt-default-dark"] p i {
+    font-size: 20px;
+    color: #a7a7a7;
+}
+
+.alrt-wrap[data-theme="alrt-default-dark"] .alrt-close-button {
+    height: 30px;
+    width: 30px;
+    margin: 0;
+    padding: 0;
+    pointer-events: all;
+    text-align: center;
+    font-size: 20px;
+    line-height: 20px;
+    background: none;
+    outline: none;
+    border: none;
+    color: transparent;
+    cursor: pointer;
+    margin-left: 5px;
+}
+
+.alrt-wrap[data-theme="alrt-default-dark"]:hover .alrt-close-button {
+    color: rgb(36, 35, 35);
+}
+
+.alrt-wrap[data-theme="alrt-default-dark"] .alrt-close-button:hover,
+.alrt-wrap[data-theme="alrt-default-dark"] .alrt-close-button:focus {
+    background: rgb(36, 35, 35);
+    color: rgb(66, 64, 64) !important;
     border-radius: 5px;
 }

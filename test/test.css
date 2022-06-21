@@ -1,7 +1,26 @@
 @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@600&display=swap');
-
 body {
     background: #030a1c;
+}
+
+.ui-theme-dark {
+    --bgMain: #18171a;
+    --bgMainT: #18171ae3;
+    --canvasBg: #202022;
+    --bgLight: #262628;
+    --bgDark: #131214;
+    --bgDarkT: #131214e3;
+    --textMain: #ffffff;
+    --textDim: #cacaca;
+    --important: #2741ff;
+    --importantT: #2740ffa9;
+    --error: #ff163d;
+    --errorT: #ff163da9;
+    --importantText: #ffffff;
+    --scrollTrack: #201F22;
+    --scrollHover: #3B3A3D;
+    --toolBarDim: #49484a;
+    --toolBarHover: #7f7f80;
 }
 
 #logo {
@@ -18,7 +37,7 @@ body {
 }
 
 #logo img.blur {
-    top:10px;
+    top: 10px;
     z-index: -100;
     filter: blur(15px);
     opacity: 40%;
@@ -37,6 +56,7 @@ button {
     left: 50%;
     transform: translate(-50%, -50%);
     cursor: pointer;
+    color: white;
 }
 
 button::after {
@@ -45,9 +65,9 @@ button::after {
     height: 100%;
     position: inherit;
     background: inherit;
-    top: 0; 
+    top: 0;
     left: 0;
-    top:10px;
+    top: 10px;
     z-index: -100;
     filter: blur(15px);
     opacity: 40%;
