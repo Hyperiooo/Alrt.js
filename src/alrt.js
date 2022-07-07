@@ -41,7 +41,6 @@ var randomString = function(l, charset) { // generates string of x length, if ch
 
 class AlrtLog {
     constructor(text, opt, mainName, noTransition) {
-        console.log(mainName)
         this.isDestroyed = false;
         if (!opt) {
             this.opt = {
